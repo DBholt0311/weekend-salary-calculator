@@ -2,42 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Salary Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screem" href="/Users/danielholt/Prime/Tier2/Week-6/weekend-salary-calculator/server/public/styles/style.css"/>
 </head>
+
 <body>
   <header>
     <h1>Salary Calculator</h1>
   </header>
   <main>
-    <form type=>
-    <h2>Add Employee</h2>
-    <input id="firstName">
-    <input id="lastName">
-    <input id="id">
-    <input id="title">
-    <input id="annualSalary">
-    <button data-testid="submitButton" id="submitBtn" type="submit" onclick="handleSubmitClick(event)">Submit</button>
-    <h2>Employees</h2>
-    <table id="employees">
-      <tr>
-        <thead>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>ID</th>
-          <th>Title</th>
-          <th>Annual Salary</th>
-        </thead>
-      </tr>
-      <tbody id="employeeData">
-
-      </tbody>
-      
-    </table>
+  <div id ="data">
+    <form class="salary-form" onSubmit="addEmployee(event)">
+      <input id="firstNameInput" type="text" />
+      <input id="lastNameInput" type="text" />
+      <input id="idInput" type="number" />
+      <input id="titleInput" type="text" />
+      <input id="annualSalaryInput" type="number" />
+      <input type="submit" value="Add Employee" />
     </form>
+      <h2>Employees</h2>
+      <table id="employees">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Annual Salary</th>
+          </tr>
+        </thead>
+        <tbody id="employeeData">
+          <tr>
+            <td>First Name</td>
+
+          </tr>   
+        </tbody>
+      </table>
+    </div>
   </main>
   <footer>
     <p>Total Monthly</p>
   </footer>
+  <script src="/Users/danielholt/Prime/Tier2/Week-6/weekend-salary-calculator/server/public/scripts/client.js"></script>
 </body>
 </html>
