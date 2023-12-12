@@ -23,4 +23,5 @@ function addEmployee(event) {
     function handleDeleteClick(event) {
         event.preventDefault();
         console.log('delete');
+        
     }
