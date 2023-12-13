@@ -1,4 +1,6 @@
 
+let totalMonthly = 0;
+
 function addEmployee(event) {
     event.preventDefault();
     console.log('submitform');
@@ -8,6 +10,9 @@ function addEmployee(event) {
     let titleVal = document.querySelector('#titleInput').value;
     let annualSalaryVal = document.querySelector('#annualSalaryInput').value;
     let employeeTable = document.querySelector('#employeeData');
+    let MonthlySalary = document.querySelector('#totalMonthly');
+    let allInputs =document.querySelectorAll('input');
+    totalMonthly += Math.round(annualSalaryVal/12);
     employeeTable.innerHTML += `
         <tr>
             <td>${firstNameVal}</td>
@@ -18,12 +23,20 @@ function addEmployee(event) {
             <td><button id='delete' onclick='handleDeleteClick(event)'>DELETE</button></td>
         </tr>
     `
-    let allInputs = document.querySelectorAll('input');
-    allInputs.forEach(singleInput => singleInput.value='');
+    allInputs.forEach(singleInput => singleInput.value ='');
+    MonthlySalary.innerHTML += `Total Monthly: ${totalMonthly}`;
+    if (totalMonthly > 20000) {
+        document.getElementById("total");
+        total.classList.add('over-budget');
     }
+
+}
 
     function handleDeleteClick(event) {
         event.preventDefault();
-        console.log('delete');
+        let td = event.target.parentNode;
+        let tr = td.parentNode;
+        tr.parentNode.removeChild(tr);
+        
         
     }
