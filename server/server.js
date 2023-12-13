@@ -1,20 +1,13 @@
-// Require express - gives us a function
 const express = require('express');
 
-// Create an instance of express by calling the function returned above - gives us an object
-const app = express();
-const port = process.env.PORT || 5001;
+const app =express();
+const PORT = 5000;
 
-// express static file serving - public is the folder name
+//registered static files (CLIENT)
 app.use(express.static('server/public'));
 
-// Start up our server
-app.listen(port, () => {
-  console.log('listening on port', port);
-});
-//allows non static files
-const arrayOfData = [1,2,3];
 
-app.get('/hello', (req, res) => {
-    res.send(arrayOfData);
-  });
+//Listen... runs my app
+app.listen(PORT, function() {
+  console.log(`'server is running on port ${PORT}'`)
+});

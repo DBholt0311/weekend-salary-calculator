@@ -18,6 +18,8 @@ function addEmployee(event) {
             <td><button id='delete' onclick='handleDeleteClick(event)'>DELETE</button></td>
         </tr>
     `
+    let allInputs = document.querySelectorAll('input');
+    allInputs.forEach(singleInput => singleInput.value='');
     }
 
     function handleDeleteClick(event) {
